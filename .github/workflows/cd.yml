@@ -29,6 +29,8 @@ jobs:
           touch ./backend/.env
           echo "DATABASE_URL=postgresql://dbAdmin:railway!123@railway-express.postgres.database.azure.com/postgres?sslmode=require&schema=public
           PORT=8080
+          ENVIRONMENT=PRODUCTION
+          CERT_PATH=/etc/letsencrypt/live/backend.railway-express.live
           " >> ./backend/.env
           cat ./backend/.env
 

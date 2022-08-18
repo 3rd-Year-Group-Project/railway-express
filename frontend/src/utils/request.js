@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:8080/api';
+const baseUrl = process.env.BASE_URL;
 
 export default async function request(method = 'get', endpoint, data) {
   const item = window?.localStorage?.getItem('currentUser');
