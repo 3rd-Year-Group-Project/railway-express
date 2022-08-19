@@ -19,7 +19,7 @@ jobs:
           rm -r .github
           rm .gitignore README.md
 
-      # Setting up path.js - changing path variable
+      # Setting up env
       - name: Setting up env
         run: |
           touch ./backend/.env
