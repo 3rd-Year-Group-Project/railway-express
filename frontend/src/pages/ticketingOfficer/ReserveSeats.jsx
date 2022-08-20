@@ -14,20 +14,14 @@ import {
 //import { Collapse, Alert, IconButton, Radio } from '@mui/material';
 import DropDown from 'components/normaltikets';
 import request from 'utils/request';
-import {
-  FormControl,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-} from '@mui/material';
 
-export default function SeasonTickets() {
+export default function ReserveSeats() {
   return (
     <TicketingOfficerLayout>
-      <h1>Season-Tickets</h1>
+      <h1>Reserve-Seats</h1>
       <form
         //onSubmit={formik.handleSubmit}
-        className="w-full flex flex-col gap-4 items-center"
+        className="w-full flex flex-col gap-1 items-center"
       >
         <div className="w-full grid gap-4 grid-cols-7">
           <p className="col-start-1 col-end-3 pl-14">Starting Station</p>
@@ -46,45 +40,28 @@ export default function SeasonTickets() {
             //{...formik.getFieldProps('role')}
           />
 
-          <p className="col-start-1 col-end-3 pl-14">Class</p>
-          <div className="col-start-3 col-end-6 min-w-max">
-            <FormControl>
-              <RadioGroup row name="class" defaultValue="SecondClass">
-                <FormControlLabel
-                  value="SecondClass"
-                  control={<Radio />}
-                  label="Second Class"
-                />
-                <FormControlLabel
-                  value="ThirdClass"
-                  control={<Radio />}
-                  label="Third Class"
-                />
-              </RadioGroup>
-            </FormControl>
-          </div>
-
-          <p className="col-start-1 col-end-3 pl-14">Name</p>
+          <p className="col-start-1 col-end-3 pl-14">Date</p>
           <TextField
             className="col-start-3 col-end-6"
             fullWidth
-            id="name"
-            name="name"
+            id="date"
+            name="date"
             //{...formik.getFieldProps('nic')}
             //error={Boolean(formik.touched.nic && formik.errors.nic)}
             //helperText={formik.errors.nic}
           />
 
-          <p className="col-start-1 col-end-3 pl-14">Price</p>
+          <p className="col-start-1 col-end-3 pl-14">Number Of Seats</p>
           <TextField
             className="col-start-3 col-end-6"
             fullWidth
-            id="totalprice"
-            name="totalprice"
+            id="seats"
+            name="seats"
             //{...formik.getFieldProps('nic')}
             //error={Boolean(formik.touched.nic && formik.errors.nic)}
             //helperText={formik.errors.nic}
           />
+
           <br></br>
           <br></br>
 
@@ -195,7 +172,7 @@ export default function SeasonTickets() {
             isLoading={''}
             className="col-start-5 col-end-6 align-middle"
           >
-            Print Ticket
+            Filter Trains
           </Button>
         </div>
         {/* <Button type="submit" isLoading={formik.isSubmitting}>
