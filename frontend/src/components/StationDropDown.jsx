@@ -2,7 +2,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import React, { useState } from 'react';
 
-export default function DropDown(props) {
+export default function StationDropDown(props) {
   const [value, setValue] = useState('');
 
   const handleChange = (event) => {
