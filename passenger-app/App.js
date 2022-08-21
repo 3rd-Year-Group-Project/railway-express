@@ -19,6 +19,7 @@ import Login from './src/screens/auth/Login';
 import Register from './src/screens/auth/Register';
 import ForgotPassword from './src/screens/auth/ForgotPassword';
 import TrainDetails from './src/screens/search/TrainDetails';
+import VerifyEmail from './src/screens/auth/VerifyEmail';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -108,6 +109,11 @@ function AuthNavigators() {
         name="ForgotPassword"
         component={ForgotPassword}
         initialParams={{ screenTitle: 'Reset Password - Railway Express' }}
+      />
+      <Stack.Screen
+        name="VerifyEmail"
+        component={VerifyEmail}
+        initialParams={{ screenTitle: 'Verify Email - Railway Express' }}
       />
     </Stack.Navigator>
   );
