@@ -41,7 +41,7 @@ export default function Login({ navigation }) {
       setTimeout(() => {
         setLoginSuccess(false);
         navigation.navigate('Search Trains');
-      }, 2000);
+      }, 1500);
     } catch (e) {
       if (e?.response?.status === 401) {
         setLoginError('Incorrect Email or Password');

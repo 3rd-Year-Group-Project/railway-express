@@ -18,6 +18,7 @@ import StationSchedule from './src/screens/timeTables/StationSchedule';
 import Login from './src/screens/auth/Login';
 import Register from './src/screens/auth/Register';
 import ForgotPassword from './src/screens/auth/ForgotPassword';
+import TrainDetails from './src/screens/search/TrainDetails';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,11 @@ function SearchNavigators() {
         name="SearchResults"
         component={SearchResults}
         initialParams={{ screenTitle: 'Available Trains' }}
+      />
+      <Stack.Screen
+        name="TrainDetails"
+        component={TrainDetails}
+        initialParams={{ screenTitle: 'Train details' }}
       />
     </Stack.Navigator>
   );
