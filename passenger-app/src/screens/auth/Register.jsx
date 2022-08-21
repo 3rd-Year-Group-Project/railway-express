@@ -59,6 +59,7 @@ export default function Register({ navigation }) {
     const submitValues = { ...values, rePassword: undefined };
     try {
       await request('post', '/user', submitValues);
+      console.log('post user done');
       await request('post', '/public/verify-email', {
         email: submitValues.email,
         firstName: submitValues.firstName,
@@ -215,10 +216,6 @@ export default function Register({ navigation }) {
       <Snackbar
         visible={regSuccess}
         onDismiss={() => {}}
-        action={{
-          label: 'Login',
-          onPress: () => navigation.navigate('Login'),
-        }}
         style={{ backgroundColor: theme.colors.success }}
       >
         Registration successful. Verity email to continue.

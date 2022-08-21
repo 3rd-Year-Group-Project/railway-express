@@ -34,11 +34,13 @@ export default function VerifyEmail({ navigation }) {
     setLoginSuccess(false);
 
     try {
-      setLoginSuccess(true);
+      setTimeout(() => {
+        setLoginSuccess(true);
+      }, 500);
       setTimeout(() => {
         setLoginSuccess(false);
-        navigation.navigate('Search Trains');
-      }, 1500);
+        navigation.navigate('Login');
+      }, 2500);
     } catch (e) {
       if (e?.response?.status === 401) {
         setLoginError('Incorrect Email or Password');

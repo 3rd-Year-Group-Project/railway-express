@@ -29,10 +29,6 @@ const loginValidationSchema = yup.object().shape({
 export default function SearchTrains({ navigation }) {
   const [loginError, setLoginError] = useState(null);
 
-  setTimeout(() => {
-    navigation.navigate('Login');
-  }, 100);
-
   async function handleLoginSubmit(values, { setSubmitting }) {
     setLoginError(null);
     setTimeout(() => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 const { AsyncStorage } = require('react-native');
 
-const baseUrl = 'https://backend.railway-express.live:8080/api';
+const baseUrl = 'http://192.168.8.150:8080/api';
 
 export default async function request(method = 'get', endpoint, data) {
   let item;
