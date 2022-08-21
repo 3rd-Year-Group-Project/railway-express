@@ -29,9 +29,9 @@ const loginValidationSchema = yup.object().shape({
 export default function SearchTrains({ navigation }) {
   const [loginError, setLoginError] = useState(null);
 
-  setTimeout(() => {
-    navigation.navigate('SearchResults');
-  }, 100);
+  // setTimeout(() => {
+  //   navigation.navigate('SearchResults');
+  // }, 100);
 
   async function handleLoginSubmit(values, { setSubmitting }) {
     setLoginError(null);
@@ -41,25 +41,33 @@ export default function SearchTrains({ navigation }) {
     setSubmitting(false);
   }
 
+  function handleFieldSwap(values, setValues) {
+    const newValues = { from: values.to, to: values.from };
+    setValues(newValues);
+  }
+
   return (
     <>
       <ScrollView
         style={{
           backgroundColor: '#F4F4F6',
         }}
+        className="flex-1"
       >
-        <View
+        {/* <View
           className="flex-1 items-center mb-2"
-          style={{ minHeight: '130%', minWidth: '100%' }}
+          style={{ minHeight: '50%', minWidth: '100%' }}
         >
           <Image
             source={UndrawSubway}
-            style={{ height: '100%', width: '100%' }}
+            style={{ height: '50%', width: '100%' }}
           />
-        </View>
+        </View> */}
 
-        <KeyboardAvoidingView className="flex-1 items-center ml-12 mr-16">
-          {/* <Text className="text-3xl font-normal mb-4">Search Trains</Text> */}
+        <KeyboardAvoidingView className="flex-1 items-center ml-12 mr-16 mt-10">
+          <Text className="text-3xl font-normal mb-4 text-slate-700">
+            Search Trains
+          </Text>
           <Formik
             validationSchema={loginValidationSchema}
             initialValues={{ from: '', to: '' }}
@@ -74,6 +82,7 @@ export default function SearchTrains({ navigation }) {
               isValid,
               isSubmitting,
               touched,
+              setValues,
             }) => (
               <>
                 <TextInput
@@ -97,7 +106,7 @@ export default function SearchTrains({ navigation }) {
                     icon="cached"
                     iconColor={theme.colors.primary}
                     size={30}
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => handleFieldSwap(values, setValues)}
                     className="absolute -top-6 -right-12"
                   />
                 </View>

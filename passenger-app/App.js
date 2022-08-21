@@ -117,13 +117,20 @@ export default function App() {
   const drawerScreenOptions = ({ icon }) => {
     return {
       drawerIcon: ({ color }) => (
-        <IconButton size={30} icon={icon} color={color} />
+        <IconButton size={22} icon={icon} color={color} />
       ),
-      drawerLabelStyle: { fontSize: 17 },
+      drawerLabelStyle: {
+        fontSize: 17,
+        marginTop: 0,
+        marginBottom: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+      },
       drawerInactiveTintColor: '#94a3b8',
       drawerInactiveBackgroundColor: '#3d4252',
       drawerActiveTintColor: 'white',
       drawerActiveBackgroundColor: 'rgba(0, 0, 0, 0.06)',
+      drawerItemStyle: { marginTop: 0, marginBottom: 0, padding: 0 },
     };
   };
 
@@ -159,8 +166,8 @@ export default function App() {
                 name="AuthNavigators"
                 component={AuthNavigators}
                 options={{
-                  drawerItemStyle: { display: 'none' },
                   ...drawerScreenOptions({ icon: 'login' }),
+                  drawerItemStyle: { display: 'none' },
                 }}
               />
             </Drawer.Navigator>

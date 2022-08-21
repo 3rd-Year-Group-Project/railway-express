@@ -1,21 +1,19 @@
-import { Formik } from 'formik';
+import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
-import { useState } from 'react';
-import { theme } from '../../../reactNativePaperTheme';
-import { useAuth } from '../../contexts/authContext';
-
-const React = require('react');
+import { Formik } from 'formik';
+import TextInput from '../../components/TextInput';
 const {
   View,
   Text,
-  ScrollView,
-  KeyboardAvoidingView,
   Image,
+  KeyboardAvoidingView,
+  ScrollView,
 } = require('react-native');
-import TextInput from '../../components/TextInput';
 const { Button, Snackbar } = require('react-native-paper');
 // @ts-ignore
 import AuthLogo from '../../../assets/images/AuthLogo.png';
+import { useAuth } from '../../contexts/authContext';
+import { theme } from '../../../reactNativePaperTheme';
 
 const loginValidationSchema = yup.object().shape({
   email: yup
@@ -24,7 +22,7 @@ const loginValidationSchema = yup.object().shape({
     .required('Email Address is Required'),
 });
 
-export default function ForgotPassword({ navigation }) {
+export default function VerifyEmail({ navigation }) {
   const { login } = useAuth();
   const [loginError, setLoginError] = useState(null);
   const [loginSuccess, setLoginSuccess] = useState(false);
@@ -34,6 +32,7 @@ export default function ForgotPassword({ navigation }) {
     setLoginSuccess(false);
 
     try {
+      await login(values.email, values.password);
       setLoginSuccess(true);
       setTimeout(() => {
         setLoginSuccess(false);
@@ -66,9 +65,10 @@ export default function ForgotPassword({ navigation }) {
         </View>
 
         <KeyboardAvoidingView className="flex-1 items-center mx-12">
+          <Text className="text-4xl font-normal mb-4">Login</Text>
           <Formik
             validationSchema={loginValidationSchema}
-            initialValues={{ email: '' }}
+            initialValues={{ email: '', password: '' }}
             onSubmit={handleLoginSubmit}
           >
             {({
@@ -98,7 +98,7 @@ export default function ForgotPassword({ navigation }) {
                   disabled={!isValid || isSubmitting}
                   loading={isSubmitting}
                 >
-                  Reset password
+                  Login
                 </Button>
               </>
             )}
@@ -106,9 +106,9 @@ export default function ForgotPassword({ navigation }) {
           <Button
             mode="text"
             className="mt-6"
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.navigate('ForgotPassword')}
           >
-            Login?
+            Forgot Password?
           </Button>
         </KeyboardAvoidingView>
       </ScrollView>
@@ -128,7 +128,7 @@ export default function ForgotPassword({ navigation }) {
         onDismiss={() => {}}
         style={{ backgroundColor: theme.colors.success }}
       >
-        Check your email to continue...
+        Login success! Redirecting to search...
       </Snackbar>
     </>
   );

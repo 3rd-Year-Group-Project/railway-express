@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { View, ScrollView, Image } from 'react-native';
+import { Button } from 'react-native-paper';
 // @ts-ignore
 import TrainSchedule from '../../../assets/images/train_schedule.jpg';
 
@@ -20,6 +21,15 @@ export default function TrainDetails({ navigation }) {
             source={TrainSchedule}
             style={{ height: '100%', width: '100%' }}
           />
+        </View>
+
+        <View className="flex-1 flex-row items-center justify-center">
+          <Button mode="contained" className="mr-12" onPress={() => {}}>
+            Buy Tickets
+          </Button>
+          <Button mode="contained" className="" onPress={() => {}}>
+            Reserve seats
+          </Button>
         </View>
       </ScrollView>
     </>

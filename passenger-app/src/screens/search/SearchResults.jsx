@@ -1,14 +1,6 @@
-import { useEffect } from 'react';
-import { Divider, IconButton, TouchableRipple } from 'react-native-paper';
+import React, { useEffect } from 'react';
 import AvailableTrainCard from '../../components/AvailableTrainCard';
-
-const React = require('react');
-const {
-  View,
-  Text,
-  ScrollView,
-  KeyboardAvoidingView,
-} = require('react-native');
+import { ScrollView, KeyboardAvoidingView } from 'react-native';
 
 export default function SearchResults({ route, navigation }) {
   const { from, to } = route.params;
