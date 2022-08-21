@@ -20,6 +20,10 @@ import Register from './src/screens/auth/Register';
 import ForgotPassword from './src/screens/auth/ForgotPassword';
 import TrainDetails from './src/screens/search/TrainDetails';
 import VerifyEmail from './src/screens/auth/VerifyEmail';
+import MyTickets from './src/screens/tickets/MyTickets';
+import BuyTickets from './src/screens/buyTickets/BuyTickets';
+import ReserveSeats from './src/screens/reserveSeats/ReserveSeats';
+import MyProfile from './src/screens/myProfile/MyProfile';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -81,7 +85,7 @@ function MyTicketsNavigators() {
     >
       <Stack.Screen
         name="MyTickets"
-        component={SearchTimeTable}
+        component={MyTickets}
         initialParams={{ screenTitle: 'My Tickets' }}
       />
     </Stack.Navigator>
@@ -114,6 +118,55 @@ function AuthNavigators() {
         name="VerifyEmail"
         component={VerifyEmail}
         initialParams={{ screenTitle: 'Verify Email - Railway Express' }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function BuyTicketsNavigators() {
+  return (
+    <Stack.Navigator
+      initialRouteName="BuyTickets"
+      screenOptions={{
+        header: (props) => <CustomNavigationBar {...props} />,
+      }}
+    >
+      <Stack.Screen
+        name="BuyTickets"
+        component={BuyTickets}
+        initialParams={{ screenTitle: 'Buy Tickets' }}
+      />
+    </Stack.Navigator>
+  );
+}
+function ReserveSeatsNavigators() {
+  return (
+    <Stack.Navigator
+      initialRouteName="ReserveSeats"
+      screenOptions={{
+        header: (props) => <CustomNavigationBar {...props} />,
+      }}
+    >
+      <Stack.Screen
+        name="ReserveSeats"
+        component={ReserveSeats}
+        initialParams={{ screenTitle: 'Reserve Seats' }}
+      />
+    </Stack.Navigator>
+  );
+}
+function MyProfileNavigators() {
+  return (
+    <Stack.Navigator
+      initialRouteName="MyProfile"
+      screenOptions={{
+        header: (props) => <CustomNavigationBar {...props} />,
+      }}
+    >
+      <Stack.Screen
+        name="MyProfile"
+        component={MyProfile}
+        initialParams={{ screenTitle: 'My Profile' }}
       />
     </Stack.Navigator>
   );
@@ -166,6 +219,21 @@ export default function App() {
                 name="Time Tables"
                 component={TimeTableNavigators}
                 options={drawerScreenOptions({ icon: 'table-large' })}
+              />
+              <Drawer.Screen
+                name="Buy Tickets"
+                component={BuyTicketsNavigators}
+                options={drawerScreenOptions({ icon: 'cards' })}
+              />
+              <Drawer.Screen
+                name="Reserve Seats"
+                component={ReserveSeatsNavigators}
+                options={drawerScreenOptions({ icon: 'seat-recline-extra' })}
+              />
+              <Drawer.Screen
+                name="My Profile"
+                component={MyProfileNavigators}
+                options={drawerScreenOptions({ icon: 'card-account-details' })}
               />
 
               <Drawer.Screen
