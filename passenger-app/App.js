@@ -230,11 +230,11 @@ export default function App() {
                 component={ReserveSeatsNavigators}
                 options={drawerScreenOptions({ icon: 'seat-recline-extra' })}
               />
-              <Drawer.Screen
+              {/* <Drawer.Screen
                 name="My Profile"
                 component={MyProfileNavigators}
                 options={drawerScreenOptions({ icon: 'card-account-details' })}
-              />
+              /> */}
 
               <Drawer.Screen
                 name="AuthNavigators"

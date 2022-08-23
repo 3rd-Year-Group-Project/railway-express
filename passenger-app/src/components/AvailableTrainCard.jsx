@@ -54,45 +54,6 @@ export default function AvailableTrainCard({
   }
 
   return (
-    // <View
-    //   className="w-full my-3 bg-slate-50 rounded-3xl"
-    //   style={{
-    //     elevation: 10,
-    //   }}
-    // >
-    //   <TouchableRipple
-    //     onPress={() => console.log('pressed!!!')}
-    //     className="rounded-3xl"
-    //     rippleColor="rgba(0, 0, 0, 0.1)"
-    //     borderless
-    //   >
-    //     <View className="bg-slate-50 rounded-3xl w-full">
-    //       <View className="relative flex-row items-center justify-evenly">
-    //         <IconButton icon="train" size={35} />
-    //         <Text className="text-lg font-bold flex-shrink">
-    //           Yal Devi (Kankasanthurai)
-    //         </Text>
-    //         <View className="bg-slate-300 rounded-full px-3 py-2 mr-3">
-    //           <Text>ETA 23mins</Text>
-    //         </View>
-    //         <View className="absolute h-0.5 bg-slate-500/25 w-full left-0 bottom-0">
-    //           <Text></Text>
-    //         </View>
-    //       </View>
-
-    //       <View className="p-5">
-    //         <Text className="mb-3 font-semibold">
-    //           Depart Colombo-Fort At: 06:35 AM
-    //         </Text>
-    //         <Text className="mb-3 font-semibold">
-    //           Arrive Anuradhapura At: 10:40 AM
-    //         </Text>
-    //         <Text className="font-semibold">Duration: 4h 5m</Text>
-    //       </View>
-    //     </View>
-    //   </TouchableRipple>
-    // </View>
-
     <View
       className="w-full my-3 bg-slate-50 rounded-3xl"
       style={{

@@ -47,20 +47,20 @@ export default function SearchTrains({ navigation }) {
       <ScrollView
         style={{
           backgroundColor: '#F4F4F6',
+          minHeight: 500,
         }}
-        className="flex-1"
+        className=""
       >
-        {/* <View
-          className="flex-1 items-center mb-2"
-          style={{ minHeight: '50%', minWidth: '100%' }}
-        >
-          <Image
-            source={UndrawSubway}
-            style={{ height: '50%', width: '100%' }}
-          />
-        </View> */}
+        <View className="" style={{ minHeight: 200, minWidth: '100%' }}>
+          <Image source={UndrawSubway} style={{ height: 200, width: '100%' }} />
+        </View>
 
-        <KeyboardAvoidingView className="flex-1 items-center ml-12 mr-16 mt-10">
+        <View
+          className="flex-1 items-center ml-12 mr-16 mt-10"
+          style={{
+            minHeight: 500,
+          }}
+        >
           <Text className="text-3xl font-normal mb-4 text-slate-700">
             Search Trains
           </Text>
@@ -119,7 +119,7 @@ export default function SearchTrains({ navigation }) {
               </>
             )}
           </Formik>
-        </KeyboardAvoidingView>
+        </View>
       </ScrollView>
       <Snackbar
         visible={Boolean(loginError)}
